@@ -1,0 +1,7 @@
+#lang scheme
+
+(define (scalar-product v1 v2)
+  (cond [(<>(vector-length <vector>)(vector-length <vector>))
+         (display "error: vectors of different length" )]
+        [(zero?)(display "error: null vector")]
+        [else()]))

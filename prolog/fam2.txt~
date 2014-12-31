@@ -1,0 +1,243 @@
+Script started on Sun 09 Mar 2014 10:46:22 PM PDT
+]0;rob@rob-ubuntu: ~/Documents/CSC600/prologrob@rob-ubuntu:~/Documents/CSC600/prolog$ gr[Kprolog
+GNU Prolog 1.3.0
+By Daniel Diaz
+Copyright (C) 1999-2007 Daniel Diaz
+| ?- [family][family].
+compiling /home/rob/Documents/CSC600/prolog/family.pl for byte code...
+/home/rob/Documents/CSC600/prolog/family.pl compiled, 62 lines read - 10236 bytes written, 18 ms
+
+(3 ms) yes
+| ?- sibling2(X,Y)(X,Y).
+
+X = 'Randy'
+Y = 'Ranita' ? a
+
+X = 'Ranita'
+Y = 'Randy'
+
+X = 'Jimbo_II'
+Y = 'Jimbos_Bro'
+
+X = 'Jimbos_Bro'
+Y = 'Jimbo_II'
+
+no
+| ?- brother2(X,Y)(X,Y).
+
+X = 'Randy'
+Y = 'Ranita' ? a
+
+X = 'Jimbo_II'
+Y = 'Jimbos_Bro'
+
+X = 'Jimbos_Bro'
+Y = 'Jimbo_II'
+
+no
+| ?- sister2(X,Y)(X,Y).
+
+X = 'Ranita'
+Y = 'Randy' ? a
+
+no
+| ?- cousing (X,Y)(X,Y).
+
+X = 'Randy'
+Y = 'Fred' ? a
+
+X = 'Randy'
+Y = 'Fred'
+
+X = 'Ranita'
+Y = 'Fred'
+
+X = 'Ranita'
+Y = 'Fred'
+
+X = 'Fred'
+Y = 'Randy'
+
+X = 'Fred'
+Y = 'Randy'
+
+X = 'Fred'
+Y = 'Ranita'
+
+X = 'Fred'
+Y = 'Ranita'
+
+(2 ms) no
+| ?- uncle(X,Y)(X,Y).
+
+X = 'Jimbos_Bro'
+Y = 'Randy' ? a
+
+X = 'Jimbos_Bro'
+Y = 'Randy'
+
+X = 'Jimbos_Bro'
+Y = 'Ranita'
+
+X = 'Jimbos_Bro'
+Y = 'Ranita'
+
+X = 'Jimbo_II'
+Y = 'Fred'
+
+X = 'Jimbo_II'
+Y = 'Fred'
+
+(1 ms) no
+| ?- audn  nt(X,Y)(X,Y).
+
+X = 'Jims_Half_Sis'
+Y = 'Randy' ? a
+
+X = 'Jims_Half_Sis'
+Y = 'Ranita'
+
+X = 'Jims_Half_Sis'
+Y = 'Fred'
+
+(1 ms) no
+| ?- grandparent(X,Y)(X,Y).
+
+X = 'Jimbo_Sr'
+Y = 'Randy' ? a
+
+X = 'Matriarch'
+Y = 'Randy'
+
+X = 'Jimbo_Sr'
+Y = 'Ranita'
+
+X = 'Matriarch'
+Y = 'Ranita'
+
+X = 'Abraham'
+Y = 'Jimbo_II'
+
+X = 'Abraham'
+Y = 'Jimbos_Bro'
+
+X = 'Abraham'
+Y = 'Jims_Half_Sis'
+
+X = 'Jimbo_Sr'
+Y = 'Fred'
+
+X = 'Matriarch'
+Y = 'Fred'
+
+X = 'GrandMami_Persephone'
+Y = 'Jimbo_Sr'
+
+no
+| ?- grandmother(X,Y)(X,Y).
+
+X = 'Matriarch'
+Y = 'Randy' ? a
+
+X = 'Matriarch'
+Y = 'Ranita'
+
+X = 'Matriarch'
+Y = 'Fred'
+
+X = 'GrandMami_Persephone'
+Y = 'Jimbo_Sr'
+
+no
+| ?- grandfather(X,Y)(X,Y).
+
+X = 'Jimbo_Sr'
+Y = 'Randy' ? a
+
+X = 'Jimbo_Sr'
+Y = 'Ranita'
+
+X = 'Abraham'
+Y = 'Jimbo_II'
+
+X = 'Abraham'
+Y = 'Jimbos_Bro'
+
+X = 'Abraham'
+Y = 'Jims_Half_Sis'
+
+X = 'Jimbo_Sr'
+Y = 'Fred'
+
+no
+| ?- grandchild(X,Y)(X,Y).
+
+X = 'Randy'
+Y = 'Jimbo_Sr' ? a
+
+X = 'Randy'
+Y = 'Matriarch'
+
+X = 'Ranita'
+Y = 'Jimbo_Sr'
+
+X = 'Ranita'
+Y = 'Matriarch'
+
+X = 'Jimbo_II'
+Y = 'Abraham'
+
+X = 'Jimbos_Bro'
+Y = 'Abraham'
+
+X = 'Jims_Half_Sis'
+Y = 'Abraham'
+
+X = 'Fred'
+Y = 'Jimbo_Sr'
+
+X = 'Fred'
+Y = 'Matriarch'
+
+X = 'Jimbo_Sr'
+Y = 'GrandMami_Persephone'
+
+(1 ms) no
+| ?- greatgrandparent(X,Y)(X,Y).
+
+X = 'Abraham'
+Y = 'Randy' ? a
+
+X = 'Abraham'
+Y = 'Ranita'
+
+X = 'GrandMami_Persephone'
+Y = 'Jimbo_II'
+
+X = 'GrandMami_Persephone'
+Y = 'Jimbos_Bro'
+
+X = 'GrandMami_Persephone'
+Y = 'Jims_Half_Sis'
+
+X = 'Abraham'
+Y = 'Fred'
+
+(1 ms) no
+| ?- ancestor(X,Y)(X,Y).
+
+X = 'GrandMami_Persephone'
+Y = 'Randy' ? a
+
+X = 'GrandMami_Persephone'
+Y = 'Ranita'
+
+X = 'GrandMami_Persephone'
+Y = 'Fred'
+
+no
+| ?- halt.
+]0;rob@rob-ubuntu: ~/Documents/CSC600/prologrob@rob-ubuntu:~/Documents/CSC600/prolog$ exit
+exit
+
+Script done on Sun 09 Mar 2014 10:56:26 PM PDT

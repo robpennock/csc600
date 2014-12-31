@@ -1,0 +1,13 @@
+#lang racket
+
+;Problem 4
+(define (find-max X Y funct)  
+  ;for somereason i cant use let here, only let*
+  (define (trisect (/ (- Y X) 3.)))
+         (xtri (+ X trisect))
+         (ytri (- Y trisect))
+    (cond [(> X Y) (display "ERROR: first value must be larger than second")]
+          ;using abs library function and setting decimal places with 0.0000001
+          [(< (abs (- (funct X) (funct Y))) .0000001) (/ (+ X Y) 2.)]
+          [(< (funct xtri) (funct ytri)) (find-max xtri Y funct)]
+          [else (find-max X ytri funct)]))

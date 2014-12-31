@@ -1,0 +1,39 @@
+array looks like: 
+a[0] = 1; a[1] = 1; a[2] = 1; a[3] = 2; a[4] = 3; a[5] = 3; a[6] = 5; a[7] = 6; a[8] = 6; a[9] = 6; a[10] = 6; a[11] = 7; a[12] = 9; 
+
+begin walkthru 1
+i = 1; cur_num = 1; prev_num = 1; cur_count = 1, max_count = 1
+
+begin walkthru 2
+i = 2; cur_num = 1; prev_num = 1; cur_count = 2, max_count = 2
+
+begin walkthru 3
+i = 3; cur_num = 2; prev_num = 1; cur_count = 3, max_count = 3
+
+begin walkthru 4
+i = 4; cur_num = 3; prev_num = 1; cur_count = 1, max_count = 3
+
+begin walkthru 5
+i = 5; cur_num = 3; prev_num = 1; cur_count = 1, max_count = 3
+
+begin walkthru 6
+i = 6; cur_num = 5; prev_num = 1; cur_count = 1, max_count = 3
+
+begin walkthru 7
+i = 7; cur_num = 6; prev_num = 1; cur_count = 1, max_count = 3
+
+begin walkthru 8
+i = 8; cur_num = 6; prev_num = 1; cur_count = 1, max_count = 3
+
+begin walkthru 9
+i = 9; cur_num = 6; prev_num = 1; cur_count = 1, max_count = 3
+
+begin walkthru 10
+i = 10; cur_num = 6; prev_num = 1; cur_count = 1, max_count = 3
+
+begin walkthru 11
+i = 11; cur_num = 7; prev_num = 1; cur_count = 1, max_count = 3
+
+begin walkthru 12
+i = 12; cur_num = 9; prev_num = 1; cur_count = 1, max_count = 3
+The longest sequnce in the array_1 is: 3

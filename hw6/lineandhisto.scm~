@@ -1,0 +1,7 @@
+#lang scheme
+
+(define (line n)
+  (cond [(<= n 0) (display"#\newline")]
+        [else (begin
+              (display `*)
+              (line(- n 1)))]))

@@ -1,0 +1,47 @@
+#lang scheme
+;used in demo of annon funct
+(define (multi n)(* n n))
+;prints the n number of stars on one line
+(define (line n)
+  (cond [(<= n 0) (display"")]
+       [else (begin
+               (display `*)
+               (line (- n 1)))]))
+
+(define (iffive n)
+  (cond[(= 5 n) "Yay!"]
+       [else printstuff]))
+
+(define (printfive)5)
+(define printstuff "fail")
+
+
+(define testlist `(1 2 3 4 5))
+;sum is helper function for mean
+;   this function simply calculates the sum
+;   of all list items
+(define (sum list)
+  (cond [ (null? list)0]
+        [else (+ (car list) (sum (cdr list)))]))
+
+;helper function used by mean
+;    calculates the number of items in a list 
+(define (lengthof list)
+  (define bla 0)
+  (cond [(empty? list) 0]
+        [else (+ 1 (lengthof (cdr list)))]))
+;returns xbar from given list
+(define (mean list)
+    (/ (sum list) (lengthof list)))
+;returns sum of x^2/n
+(define (x2 list)
+  (cond[(null? list)0]
+       [else (/ (squaresum list) (lengthof list))]))
+;squares and adds all values of list
+(define (squaresum list)
+  (cond[(empty? list)0]
+       [else (+ (expt (car list) 2) (squaresum(cdr list)))]))
+
+(define (sigma . list)
+  (cond [(null? list)0]
+        [else (sqrt(- (x2 list) (expt (mean list) 2)))]))

@@ -1,0 +1,140 @@
+Script started on Sun 09 Mar 2014 10:35:56 PM PDT
+]0;rob@rob-ubuntu: ~/Documents/CSC600/prologrob@rob-ubuntu:~/Documents/CSC600/prolog$ gprolog
+GNU Prolog 1.3.0
+By Daniel Diaz
+Copyright (C) 1999-2007 Daniel Diaz
+| ?- [family][family].
+compiling /home/rob/Documents/CSC600/prolog/family.pl for byte code...
+/home/rob/Documents/CSC600/prolog/family.pl compiled, 62 lines read - 10235 bytes written, 15 ms
+
+(2 ms) yes
+| ?- is_mother(X,)(X,)y)) Y)).
+
+X = 'Jane'
+Y = 'Randy' ? a
+
+X = 'Jane'
+Y = 'Ranita'
+
+X = 'Matriarch'
+Y = 'Jimbo_II'
+
+X = 'Matriarch'
+Y = 'Jimbos_Bro'
+
+X = 'GrandMami_Persephone'
+Y = 'Abraham'
+
+yes
+| ?- is_father(X,Y)(X,Y).
+
+X = 'Jimbo_II'
+Y = 'Randy' ? a
+
+X = 'Jimbo_II'
+Y = 'Ranita'
+
+X = 'Jimbo_Sr'
+Y = 'Jimbo_II'
+
+X = 'Jimbo_Sr'
+Y = 'Jimbos_Bro'
+
+X = 'Jimbo_Sr'
+Y = 'Jims_Half_Sis'
+
+X = 'Jimbos_Bro'
+Y = 'Fred'
+
+X = 'Abraham'
+Y = 'Jimbo_Sr'
+
+(2 ms) no
+| ?- sipling1(X,Y)(X,Y).ling1(X,Y). bling1(X,Y).ling1(X,Y).
+
+X = 'Randy'
+Y = 'Ranita' ? a
+
+X = 'Ranita'
+Y = 'Randy'
+
+X = 'Jimbo_II'
+Y = 'Jimbos_Bro'
+
+X = 'Jimbos_Bro'
+Y = 'Jimbo_II'
+
+X = 'Randy'
+Y = 'Ranita'
+
+X = 'Ranita'
+Y = 'Randy'
+
+X = 'Jimbo_II'
+Y = 'Jimbos_Bro'
+
+X = 'Jimbo_II'
+Y = 'Jims_Half_Sis'
+
+X = 'Jimbos_Bro'
+Y = 'Jimbo_II'
+
+X = 'Jimbos_Bro'
+Y = 'Jims_Half_Sis'
+
+X = 'Jims_Half_Sis'
+Y = 'Jimbo_II'
+
+X = 'Jims_Half_Sis'
+Y = 'Jimbos_Bro'
+
+(1 ms) no
+| ?- brother(X,Y)(X,Y).
+uncaught exception: error(existence_error(procedure,brother/2),top_level/0)
+| ?- brother1(X,Y)(X,Y).
+
+X = 'Randy'
+Y = 'Ranita' ? a
+
+X = 'Jimbo_II'
+Y = 'Jimbos_Bro'
+
+X = 'Jimbos_Bro'
+Y = 'Jimbo_II'
+
+X = 'Randy'
+Y = 'Ranita'
+
+X = 'Jimbo_II'
+Y = 'Jimbos_Bro'
+
+X = 'Jimbo_II'
+Y = 'Jims_Half_Sis'
+
+X = 'Jimbos_Bro'
+Y = 'Jimbo_II'
+
+X = 'Jimbos_Bro'
+Y = 'Jims_Half_Sis'
+
+(2 ms) no
+| ?- sister1(X,Y)(X,Y).
+
+X = 'Ranita'
+Y = 'Randy' ? a
+
+X = 'Ranita'
+Y = 'Randy'
+
+X = 'Jims_Half_Sis'
+Y = 'Jimbo_II'
+
+X = 'Jims_Half_Sis'
+Y = 'Jimbos_Bro'
+
+no
+| ?- halt.
+]0;rob@rob-ubuntu: ~/Documents/CSC600/prologrob@rob-ubuntu:~/Documents/CSC600/prolog$ exit
+exit
+
+Script done on Sun 09 Mar 2014 10:40:41 PM PDT

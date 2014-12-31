@@ -1,0 +1,17 @@
+#lang scheme
+;helper function
+(define (lengthof list)
+  (define bla 0)
+  (cond [(empty? list) 0]
+        [else (+ 1 (lengthof (cdr list)))]))
+;multiply row helper function
+(define (multrow lista listb)
+  (define veca (list->vector lista))
+  (define vecb (list->vector listb))
+  (define boundA (lengthof lista))
+  (define boundB (lengthof listb))
+  (cond[ (or(> boundB boundA)(< boundB boundA))
+         (display "ERROR: lists of different size")]
+       [else (do ((i 1 (+ i 1)))
+               ((> i 4))(print "bla"))]
+  ))

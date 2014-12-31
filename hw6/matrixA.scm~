@@ -1,0 +1,61 @@
+#lang scheme
+(define fileloc1 "/home/rob/matrix1.dat")
+(define fileloc2 "/home/rob/matrix2.dat")
+;Problem 6 a
+;borrowing heavily from Dr Dujmovic's matrix handout
+(define (row file rownum)
+  (define openfile (open-input-file file))
+  (define row-out '())
+  (define rows (read openfile))
+  (define cols (read openfile))
+  (define (getrow row col)
+    ;need to use if here 'cause multiple conds get confusing
+    (begin (if [and (= row rownum) (< col cols)] 
+               (set! row-out (cons (read openfile) row-out)) (read openfile))
+           (cond 
+             [(= (+ row 1) rows) (if (> col cols) (display "") (getrow row (+ 1 col)))]
+             [(= (+ col 1) cols) (getrow (+ 1 row) 0)]
+             [else (getrow row (+ 1 col))])))
+  ;
+  (begin (set! rownum (- rownum 1))
+  (cond[ (> rownum rows)
+      (begin (display "no row # ") 
+             (display rownum) 
+             (display " in matrix ") 
+             (display file) 
+             (close-input-port openfile))]
+      [else (begin 
+             (getrow 0 0) 
+             (close-input-port openfile) 
+             (list->vector (reverse row-out)))])))
+
+(define (col filepath colnumber)
+  (define port (open-input-file filepath))
+  (define rows (read port))
+  (define cols (read port))
+  (define column '())
+  (define (getcol row col)
+    (begin (if (= col colnumber) (set! column (cons (read port) column)) (read port))
+           (cond 
+             ((= (+ row 1) rows) (if (> col cols) (display "") (getcol row (+ 1 col))))
+             ((= (+ col 1) cols) (getcol (+ 1 row) 0))
+             (else (getcol row (+ 1 col))))))
+  (begin (set! colnumber (- colnumber 1))
+  (if (> colnumber cols)
+      (begin (display "col = ") (display colnumber) (display " does not exist in matrix ") (display filepath) (close-input-port port))
+      (begin (getcol 0 0) (close-input-port port) (list->vector (reverse column))))))
+       
+;Outputs a string instead of a vector
+(define (row-string filepath rownum)
+  (define port (open-input-file filepath))
+  (define row-output '())
+  (define rows (read port))
+  (define cols (read port))
+  (define (getrow index)
+    (if (= rownum index)
+        (begin (set! row-output (read-line port)) row-output)
+        (begin (read-line port) (getrow (+ index 1)))))
+  (if (> rownum rows)
+      (begin (display "row = ") (display rownum) (display " does not exist in matrix ") (display filepath) (close-input-port port))
+      (begin (getrow 0) (close-input-port port) row-output)))
+    

@@ -1,0 +1,215 @@
+Script started on Sun 09 Mar 2014 11:06:47 PM PDT
+]0;rob@rob-ubuntu: ~/Documents/CSC600/prologrob@rob-ubuntu:~/Documents/CSC600/prolog$ gprolog
+GNU Prolog 1.3.0
+By Daniel Diaz
+Copyright (C) 1999-2007 Daniel Diaz
+| ?- te  [tea   schedule][schedule].
+compiling /home/rob/Documents/CSC600/prolog/schedule.pl for byte code...
+/home/rob/Documents/CSC600/prolog/schedule.pl compiled, 72 lines read - 6818 bytes written, 14 ms
+
+(3 ms) yes
+| ?- teaches(X,Y)(X,Y).
+
+X = 'Jozo'
+Y = '340' ? a
+
+X = 'Jozo'
+Y = '600'
+
+X = 'Sosnick'
+Y = '640'
+
+X = 'Sosnick'
+Y = '256'
+
+X = 'Sosnick'
+Y = '412'
+
+X = 'Tomasevich'
+Y = '230'
+
+X = 'Tomasevich'
+Y = '300'
+
+X = 'Levine'
+Y = '413'
+
+yes
+| ?- freshman(X,Y)(X,Y).
+uncaught exception: error(existence_error(procedure,freshman/2),top_level/0)
+| ?- freshmen(X,Y)(X,Y).
+uncaught exception: error(existence_error(procedure,freshmen/2),top_level/0)
+| ?- freshman(X)(X)
+.
+
+X = '230' ? a
+
+X = '256'
+
+yes
+| ?- somph   phomo   more(X)(X).
+
+X = '300' ? a
+
+X = '340'
+
+yes
+| ?- junior(X)(X).
+
+X = '412' ? a
+
+X = '413'
+
+yes
+| ?- senior(X)(X).
+
+X = '600' ? a
+
+X = '640'
+
+(1 ms) yes
+| ?- morning(X)(X).
+
+X = '340' ? a
+
+X = '256'
+
+(1 ms) yes
+| ?- afternoon(X)(X).
+
+X = '600' ? a
+
+X = '640'
+
+X = '256'
+
+X = '412'
+
+X = '230'
+
+X = '300'
+
+X = '413'
+
+(1 ms) yes
+| ?- teaches_freshman(X)(X).
+
+X = 'Sosnick' ? a
+
+X = 'Tomasevich'
+
+no
+| ?- teaches_soh phmore(A)(A).
+
+A = 'Jozo' ? a
+
+A = 'Tomasevich'
+
+(1 ms) no
+| ?- teaches_sophmore(A).            junior(F)(F).
+
+F = 'Sosnick' ? a
+
+F = 'Levine'
+
+yes
+| ?- teaches_junior(F).          senior(G)(G).
+
+G = 'Jozo' ? a
+
+G = 'Sosnick'
+
+no
+| ?- teaches_senior(G).          morning(A)(A).
+
+A = 'Jozo' ? a
+
+A = 'Sosnick'
+
+no
+| ?- teaches_afternoon(C)(C).
+
+C = 'Jozo' ? a
+
+C = 'Sosnick'
+
+C = 'Sosnick'
+
+C = 'Sosnick'
+
+C = 'Tomasevich'
+
+C = 'Tomasevich'
+
+C = 'Levine'
+
+yes
+| ?- teaches_afternoon(C).             whole_day(T)(T).
+
+T = 'Jozo' ? a
+
+T = 'Sosnick'
+
+T = 'Sosnick'
+
+T = 'Sosnick'
+
+T = 'Tomasevich'
+
+T = 'Tomasevich'
+
+T = 'Levine'
+
+T = 'Jozo'
+
+T = 'Sosnick'
+
+no
+| ?- works_mwf(X)(X).
+
+X = 'Jozo' ? a
+
+X = 'Jozo'
+
+X = 'Sosnick'
+
+X = 'Sosnick'
+
+X = 'Tomasevich'
+
+no
+| ?- works(t       works_tth(x)(x).
+uncaught exception: error(existence_error(procedure,works_tth/1),top_level/0)
+| ?- works_tth(x).    (A)(A).
+uncaught exception: error(existence_error(procedure,works_tth/1),top_level/0)
+| ?- works_tth(A).th(A). th(A).
+
+A = 'Jozo' ? a
+
+A = 'Sosnick'
+
+A = 'Sosnick'
+
+A = 'Levine'
+
+(1 ms) yes
+| ?- teaches_three_classes(A)(A).
+
+A = 'Sosnick' ? a
+
+A = 'Sosnick'
+
+A = 'Sosnick'
+
+A = 'Sosnick'
+
+A = 'Sosnick'
+
+A = 'Sosnick'
+
+no
+| ?- halt.
+]0;rob@rob-ubuntu: ~/Documents/CSC600/prologrob@rob-ubuntu:~/Documents/CSC600/prolog$ exit
+exit
+
+Script done on Sun 09 Mar 2014 11:12:58 PM PDT
